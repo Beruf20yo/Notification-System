@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Cormorant Infant' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="left">
+        <ul class="nav">
+            <chosen><li><a href="sender.html">Рассылка<br>
+                <i class="material-icons">mail</i>
+            </a></li></chosen>
+            <li><a href="notification.html">Уведомления<br>
+                <i class="material-icons">contact_mail</i></a></li>
+            <li><a href="bd.html">База данных<br>
+                <i class="material-icons">account_balance</i></a></li>
+            <li><a href="history.html">История<br>
+                <i class="material-icons">storage</i></a></li>
+        </ul>
+    </div>
+    <div class="head_title">
+        <header>Рассылка клиента<br>
+        <i class="material-icons">mail</i>
+        </header>
+    </div>
+    <div class="main">
+        <div class="text_area">
+            Текст сообщения<br>
+            <textarea value = "Текст вашего сообщения" onBlur="if(this.value == '') this.value = 'Текст вашего сообщения'" onFocus="if(this.value == 'Текст вашего сообщения') this.value = ''" required></textarea>
+            <button id="load-csv">Загрузить с помощью .CSV файла</button>
+        </div>
+        <div class="type_send">
+            Тип рассылки<br>
+            <div id="square">
+                <a>
+                    <input type="radio" id="sms" name="message-type" value="SMS" checked />
+                    <label for="sms">SMS</label><br>
+                    <input type="radio" id="telegram" name="message-type" value="Telegram" />
+                    <label for="telegram">Telegram</label><br>
+                    <input type="radio" id="mail" name="message-type" value="Mail" />
+                    <label for="mail">Mail</label><br>
+                    <input type="radio" id="whatsapp" name="message-type" value="WhatsApp" />
+                    <label for="whatsapp">WhatsApp</label><br>
+                </a>    
+            </div>
+        </div>
+        <div class="type_client">
+            Тип клиента<br>
+            <div id="square">
+                <a>
+                    <input type="radio" id="sms" name="client-type" value="SMS" checked />
+                    <label for="sms">новые</label><br>
+                    <input type="radio" id="whatsapp" name="client-type" value="WhatsApp" />
+                    <label for="whatsapp">все</label><br>
+                </a>
+            </div>
+        </div>
+        <div class="send_img">
+            Отправить<br>
+            <a href="">
+            <i class="material-icons">send</i></a>
+        </div>
+    </div>     
+</body>
+</html>

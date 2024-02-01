@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Cormorant Infant' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="left">
+        <ul class="nav"> 
+            <li><a href="sender.html">Рассылка<br>
+                <i class="material-icons">mail</i>
+            </a></li>
+            <li><a href="notification.html">Уведомления<br>
+                <i class="material-icons">contact_mail</i></a></li>
+            <chosen><li>
+                <a href="bd.html">База данных<br>
+                    <i class="material-icons">account_balance</i>
+                </a></li></chosen>
+                <li><a href="history.html">История<br>
+                    <i class="material-icons">storage</i></a></li>
+        </ul>
+    </div>
+    <div class="head_title">
+        <header>База данных<br>
+        <i class="material-icons">account_balance</i>
+        </header>
+    </div>
+    <div class="main">
+        <div class="new_person">
+            <div id="square">
+                <form id="form">
+                    <label for="fio">ФИО:</label>
+                    <input type="text" id="fio" name="fio" required>
+                    <label for="type">Тип:</label>
+                    <select id="type" name="type">
+                        <option value="employee">Сотрудник</option>
+                        <option value="client">Клиент</option>
+                    </select>
+                    <label for="contact">Контактные данные:</label>
+                    <textarea id="contact" name="contact" required></textarea>
+                    <button type="submit">Сохранить</button>
+                </form>
+            </div>
+            
+        </div>
+        <div class="table_person">
+            <table id="myTable">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>John Doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>1234567890</td>
+                    <td><button class="delete-btn">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Jane Doe</td>
+                    <td>jane.doe@example.com</td>
+                    <td>0987654321</td>
+                    <td><button class="delete-btn">Delete</button></td>
+                </tr>
+            </table>
+            <button id="load-csv">Загрузить с помощью .CSV файла</button>    
+        </div>
+    </div>
+    
+    <script>
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const row = this.parentNode.parentNode;
+                row.parentNode.removeChild(row);
+            });
+        });
+    </script>
+</body>
+</html>
