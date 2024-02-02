@@ -15,16 +15,23 @@ body {
     list-style: none;
 }
 .nav chosen li {   
-    border: 5px solid blue;
+    border: 3px solid blue;
     border-style: double;
 
 }
 .nav li {    
-    margin-top: 60%;
+    margin-top: 40%;
     margin-left: 15%;
     margin-right: 15%;
-    margin-bottom: 60%;   
+    margin-bottom: 40%;   
     border: 3px solid black;
+    padding: 5%;
+}
+.nav img {    
+    margin-top: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 20%;   
     padding: 5%;
 }
 
@@ -55,7 +62,7 @@ a:visited {
     font-family: 'Montserrat';
     font-size: 18px;
     display: flex;
-    width: 90%;
+    width: 85%;
     margin-left: 15%;
     margin-top: 5%;
 }
@@ -63,11 +70,11 @@ a:visited {
     margin-right: 15%;
 }
 .new_person {
-    width: 33%;
-    margin-left: 5%;
+    display: flex;
+    width: 23%;
 }
 .table_person {
-    width: 47%;
+    width: 57%;
     margin-left: 5%;
 }
 .text_area {
@@ -98,11 +105,6 @@ a:visited {
     font-size: 36px;
     margin-top: 40%;
 }
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
 
 form {
     display: flex;
@@ -110,16 +112,22 @@ form {
     margin-bottom: 2rem;
 }
 
-label,
-input,
-select,
-textarea {
-    flex-basis: 100%;
+#new_form label { 
+    vertical-align: center;
+    flex-basis: 70%;
+    margin-bottom: 0.5rem;
+}
+
+#new_form input, select, textarea {
+    border: 1px solid black;
+    background-color: #c5c4c4;
+    vertical-align: center;
+    flex-basis: 70%;
     margin-bottom: 0.5rem;
 }
 
 button {
-    flex-basis: 100%;
+    flex-basis: 70%;
     margin-top: 0.5rem;
 }
 
@@ -137,42 +145,6 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
-#notification-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  #message-text {
-    width: 500px;
-    height: 200px;
-    resize: vertical;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  #recipient-type {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  #recipient-type label {
-    margin: 0 10px;
-  }
-  
-  #message-type {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  #message-type label {
-    margin: 0 10px;
-  }
-  
-  #attach-image {
-    margin-bottom: 20px;
-  }
 #square {
     margin-top: 15%;
     width: 250px;
@@ -187,3 +159,32 @@ th {
     margin-top: 10%;
     margin-left: 10%;
 }
+#square_form {
+    margin-top: 15%;
+    width: 300px;
+    height: 400px;
+    background: #bdbdbd;
+    border: 1px solid black;
+	border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+}
+#square_form form {
+    margin-left: 2em;
+    margin-top: 1em;
+
+}
+#new_form {
+    padding: 50% auto;
+    align-items: center;
+}
+#myInput {
+    background-image: url('search.png'); 
+    background-position: 10px 12px; 
+    background-repeat: no-repeat; 
+    width: 20%; 
+    font-size: 16px;
+    padding: 12px 20px 12px 40px; 
+    border: 1px solid #ddd; 
+    margin-bottom: 12px; 
+  }

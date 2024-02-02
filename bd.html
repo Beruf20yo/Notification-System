@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" href="logo.png" />
+    <title>База данных</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Cormorant Infant' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -20,6 +22,7 @@
                 </a></li></chosen>
                 <li><a href="history.html">История<br>
                     <i class="material-icons">storage</i></a></li>
+                <img src="logo.png" width="100" height="100"/>
         </ul>
     </div>
     <div class="head_title">
@@ -29,8 +32,8 @@
     </div>
     <div class="main">
         <div class="new_person">
-            <div id="square">
-                <form id="form">
+            <div id="square_form">
+                <form id="new_form">
                     <label for="fio">ФИО:</label>
                     <input type="text" id="fio" name="fio" required>
                     <label for="type">Тип:</label>
@@ -39,30 +42,36 @@
                         <option value="client">Клиент</option>
                     </select>
                     <label for="contact">Контактные данные:</label>
-                    <textarea id="contact" name="contact" required></textarea>
+                    <label for="sms">SMS:</label>
+                    <input type="text" id="sms" name="sms" required>
+                    <label for="telegram">Telegram:</label>
+                    <input type="text" id="telegram" name="telegram" required>
+                    <label for="mail">Mail:</label>
+                    <input type="text" id="mail" name="mail" required>
                     <button type="submit">Сохранить</button>
                 </form>
             </div>
             
         </div>
         <div class="table_person">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
             <table id="myTable">
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Action</th>
+                    <th>ФИО</th>
+                    <th>Тип</th>
+                    <th>Mail</th>
+                    <th>SMS</th>
+                    <th>Telegram</th>
+                    <th>WhatsApp</th>
+                    <th>Удаление</th>
                 </tr>
                 <tr>
                     <td>John Doe</td>
+                    <td>Сотрудник</td>
                     <td>john.doe@example.com</td>
-                    <td>1234567890</td>
-                    <td><button class="delete-btn">Delete</button></td>
-                </tr>
-                <tr>
-                    <td>Jane Doe</td>
-                    <td>jane.doe@example.com</td>
-                    <td>0987654321</td>
+                    <td>+1234567890</td>
+                    <td>@example</td>
+                    <td>+1234567890</td>
                     <td><button class="delete-btn">Delete</button></td>
                 </tr>
             </table>
@@ -77,6 +86,24 @@
                 row.parentNode.removeChild(row);
             });
         });
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
     </script>
 </body>
 </html>
